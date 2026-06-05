@@ -1,57 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
- xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://tasign.in/</loc>
+    <loc>https://www.tasign.in/</loc>
   </url>
 
   <url>
-    <loc>https://tasign.in/home</loc>
+    <loc>https://www.tasign.in/home</loc>
   </url>
 
   <url>
-    <loc>https://tasign.in/digital-signature-certificate</loc>
+    <loc>https://www.tasign.in/digital-signature-certificate</loc>
   </url>
 
   <url>
-    <loc>https://tasign.in/dsc-utilities</loc>
+    <loc>https://www.tasign.in/dsc-utilities</loc>
   </url>
 
   <url>
-    <loc>https://tasign.in/authorization-letters</loc>
+    <loc>https://www.tasign.in/authorization-letters</loc>
   </url>
 
   <url>
-    <loc>https://tasign.in/iso-certification</loc>
+    <loc>https://www.tasign.in/iso-certification</loc>
   </url>
 
   <url>
-    <loc>https://tasign.in/trademark-registration</loc>
+    <loc>https://www.tasign.in/trademark-registration</loc>
   </url>
 
   <url>
-    <loc>https://tasign.in/services</loc>
+    <loc>https://www.tasign.in/services</loc>
   </url>
 
   <url>
-    <loc>https://tasign.in/buy-token</loc>
+    <loc>https://www.tasign.in/buy-token</loc>
   </url>
 
   <url>
-    <loc>https://tasign.in/blog</loc>
+    <loc>https://www.tasign.in/blog</loc>
   </url>
 
   <url>
-    <loc>https://tasign.in/about</loc>
+    <loc>https://www.tasign.in/about</loc>
   </url>
 
   <url>
-    <loc>https://tasign.in/contact</loc>
+    <loc>https://www.tasign.in/contact</loc>
   </url>
 
   <url>
-    <loc>https://tasign.in/website-development</loc>
+    <loc>https://www.tasign.in/website-development</loc>
   </url>
 
 </urlset>
