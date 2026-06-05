@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
 
 
 const items = [
@@ -37,8 +37,8 @@ const WebsiteDevelopment = () => {
 
   <div className="md:sticky top-0 h-fit ">
 
-<div className="border-t border-b border-neutral-200 p-6 mb-10  flex justify-between items-center">
-  <div className="flex flex-col-reverse gap-4 justify-between">
+<div className="sm:border-t border-b border-neutral-200  p-2 sm:p-6 mb-10  flex flex-col sm:flex-row justify-between items-center">
+  <div className="flex flex-col-reverse gap-4 justify-between w-full ">
     <div>
       <p className="uppercase tracking-[0.25em] text-xs text-neutral-400">
        Meet Your Developer
@@ -62,12 +62,12 @@ design and develop modern business websites.
     />
   </div>
 
-  <div className="mt-6 lg:mr-20 pl-6 border-l border-neutral-200">
-    <p className="text-sm text-neutral-500">
+  <div className="w-full sm:w-md mt-6 lg:mr-20  pt-6 sm:pl-6 border-t  sm:border-t-0 sm:border-l border-blue-300 self-end">
+    <p className="text-sm text-neutral-500  ">
       Business websites starting from
     </p>
 
-    <h4 className="text-5xl font-semibold mt-2 text-blue-600 tracking-tight font-[Philosopher]">
+    <h4 className="text-5xl font-semibold mt-2 text-blue-600 tracking-tight font-[Philosopher] ">
       ₹5,999
     </h4>
   </div>
@@ -75,7 +75,7 @@ design and develop modern business websites.
 
   
 
-  <h2 className="mt-5 text-5xl md:text-6xl font-semibold tracking-wide leading-none font-[Philosopher]">
+  <h2 className="mt-5 text-4xl sm:text-5xl md:text-6xl font-semibold tracking-wide leading-none font-[Philosopher]">
    Your Business
 Deserves <br/> More Than
 Just A <br/> Social  Media
@@ -109,21 +109,9 @@ Profile.
   </p>
 </div>
 
-  <div className="mt-12 pt-8 border-t border-neutral-200">
+  <div className="mt-12 pt-8 border-t border-neutral-200"/>
 
-    <a
-      href="#portfolio"
-      className="group inline-flex items-center gap-3 text-base font-medium"
-    >
-      View Selected Work
-
-      <ArrowUpRight
-        size={18}
-        className="group-hover:translate-x-1 group-hover:-translate-y-1 transition"
-      />
-    </a>
-
-  </div>
+ 
 
 </div>
 
@@ -131,35 +119,52 @@ Profile.
 
       {/* RIGHT */}
 <div className=" flex flex-col items-end gap-10 lg:border-l lg:pl-10 lg:shadow-md pb-10">
-  <p className="uppercase tracking-[0.3em] text-xs text-neutral-400">
+ 
+<a
+href="https://abhilash-portfolio-gray.vercel.app/"
+target="_blank"
+
+className=" flex border border-black bg-black rounded-full group px-6 py-3 mb-4 hover:scale-105 transition-all duration-300 text-white  items-center gap-4 cursor-pointer"> Portfolio
+
+  <span className=" relative  items-center justify-center ">
+    <span className="  inline-block w-2 h-2 scale-90 group-hover:scale-300 bg-amber-700  rounded-full items-center justify-center transition-all duration-300"></span>
+    <ExternalLink size={15} className="absolute scale-0 group-hover:scale-100 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 top-1/2 left-1/2"/>
+  </span>
+</a>
+
+ <div className="w-full">
+  <p className="uppercase tracking-[0.3em] text-xs text-blue-700">
     Selected Work
   </p>
 
-  <h3 className="mt-3 text-3xl font-semibold">
+  <h3 className="mt-2 text-3xl font-semibold">
     A glimpse into what we build.
   </h3>
+  </div> 
 
 
   {items.map((item) => (
-   <div className="w-full h-full max-w-[620px]">
+   <div 
+   key={item.title}
+   className="w-full h-full max-w-[620px] border-b border-blue-200 pb-8">
   
 
 
-  <div className="relative overflow-hidden w-full h-full md:h-[300px] group">
+  <div className="relative overflow-hidden w-full  md:h-[300px] group ">
     <img
       src={item.image}
       alt={item.title}
-      className="absolute inset-0 w-full  object-cover transition duration-700 group-hover:scale-105"
+      className="md:absolute inset-0 w-full  object-cover transition duration-700 group-hover:scale-105"
     />
   </div>
 
-  <div className="mt-5 flex justify-between gap-8">
+  <div className="mt-5 flex flex-col md:flex-row justify-between gap-2 md:gap-8">
     <div>
       <p className="text-xs uppercase tracking-[0.25em] text-neutral-400">
         {item.number}
       </p>
 
-      <h3 className="mt-2 text-2xl font-medium">
+      <h3 className="mt-1 text-2xl font-medium">
         {item.title}
       </h3>
     </div>

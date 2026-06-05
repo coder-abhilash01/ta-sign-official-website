@@ -12,7 +12,8 @@ const letters = [
   {
     company: "eMudhra",
     desc: "Authorization letter required for eMudhra DSC verification and processing.",
-    file: "/New folder/auth-letters/Emudhra-AuthorizationLetter-2021 (1).pdf",
+    file: "/downloads/auth-letters/Emudhra-AuthorizationLetter-2021.pdf",
+    link:"https://emudhradigital.com/",
     logo: "/partner-logos/emudhra-logo.jpg",
     type: "PDF",
   },
@@ -20,7 +21,8 @@ const letters = [
   {
     company: "Care4Sign",
     desc: "Official authorization format for Care4Sign DSC applications.",
-    file: "/New folder/auth-letters/Care4sign-Authorisation-letter-Format.pdf",
+    file: "/downloads/auth-letters/Care4sign-Authorisation-letter-Format.pdf",
+    link:"https://care4sign.com/",
     logo: "/partner-logos/care4Sign-logo.jpg",
     type: "PDF",
   },
@@ -28,7 +30,8 @@ const letters = [
   {
     company: "Pantasign",
     desc: "Download authorization letter for Pantasign DSC issuance.",
-    file: "/New folder/auth-letters/pantasign-letter.pdf",
+    file: "/downloads/auth-letters/pantasign-letter.pdf",
+    link:"https://www.pantasign.com/",
     logo: "/partner-logos/pantasign-logo.png",
     type: "PDF",
   },
@@ -36,7 +39,8 @@ const letters = [
   {
     company: "V-Sign",
     desc: "Authorization document required for V-Sign digital signature process.",
-    file: "/New folder/auth-letters/vsign-letter.docx",
+    file: "/downloads/auth-letters/vsign-letter.docx",
+    link:"https://www.vsign.in/",
     logo: "/partner-logos/vsign-logo.webp",
     type: "DOCX",
   },
@@ -44,7 +48,8 @@ const letters = [
   {
     company: "SignX",
     desc: "Required authorization letter for SignX DSC verification workflow.",
-    file: "/New folder/auth-letters/SignX-Authorization-Letter.pdf",
+    file: "/downloads/auth-letters/SignX-Authorization-Letter.pdf",
+    link:"https://www.signxca.com/",
     logo: "/partner-logos/signX-logo.webp",
     type: "PDF",
   },
@@ -52,7 +57,8 @@ const letters = [
   {
     company: "Prodigisign",
     desc: "Authorization and onboarding document for Prodigisign services.",
-    file: "/New folder/auth-letters/Prodigy-Authorization-Letter.doc",
+    file: "/downloads/auth-letters/Prodigy-Authorization-Letter.doc",
+    link:"https://prodigisign.com/",
     logo: "/partner-logos/prodigisign-logo.png",
     type: "DOC",
   },
@@ -163,7 +169,7 @@ const AuthorizationLetters = () => {
                 </a>
 
                 <a
-                  href={item.file}
+                  href={item.link}
                   target="_blank"
                   rel="noreferrer"
                   className="w-13 h-13 rounded-full bg-white

@@ -35,7 +35,7 @@ const Blog = () => {
       {/* HERO */}
 
       <section className="border-b border-neutral-200">
-        <div className="w-full mx-auto px-6 md:px-16 py-14 flex flex-col md:flex-row bg-blue-200 items-center">
+        <div className="w-full mx-auto px-6 md:px-16 py-14 flex flex-col lg:flex-row bg-blue-200 items-center justify-between">
 
           <div className="max-w-4xl">
             
@@ -73,10 +73,10 @@ const Blog = () => {
 
           {/* SEARCH */}
 
-          <div className="mt-12 flex-1 flex justify-end">
+          <div className="mt-12 w-2/3 xl:w-1/3 flex justify-end ">
             <div
               className="  bg-white  border  border-neutral-200  rounded-2xl  px-4  h-14 
-              flex  items-center  gap-3 w-full  md:w-2/3  shadow-inner  shadow-black/40  "
+              flex  items-center  gap-3 w-full  shadow-inner  shadow-black/40  "
             >
               <Search size={18} />
 
@@ -87,7 +87,7 @@ const Blog = () => {
                 onChange={(e) =>
                   setSearch(e.target.value)
                 }
-                className="flex-1 outline-none bg-transparent
+                className="w-full outline-none bg-transparent
                 
               "
               />

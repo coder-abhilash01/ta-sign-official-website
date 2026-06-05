@@ -13,6 +13,8 @@ import BlogDetails from '@/pages/BlogDetails'
 import MoreServices from '@/pages/MoreServices'
 import WebsiteDevelopment from '@/pages/WebsiteDevelopment'
 import PageNotFound from '@/pages/PageNotFound'
+import AboutUs from '@/components/AboutUs'
+import ContactUs from '@/pages/ContactUs'
  
  const MainRoutes = () => {
    return (
@@ -21,15 +23,17 @@ import PageNotFound from '@/pages/PageNotFound'
        <Routes>
         <Route path="/" element={<Navigate to="/home"/>}/>
             <Route path='/home' element={<Home />} />
-            <Route path='/dsc-pricing' element={<DscRates />} />
+            <Route path='/digital-signature-certificate' element={<DscRates />} />
             <Route path='/dsc-utilities' element={<Utilities />} />
             <Route path= '/authorization-letters' element={<AuthorizationLetters />} />
-            <Route path='/buy-iso' element={ <ISOPage/>} />
-            <Route path='/buy-trademark' element={<TrademarkPage/>}/>
+            <Route path='/iso-certification' element={ <ISOPage/>} />
+            <Route path='/trademark-registration' element={<TrademarkPage/>}/>
             <Route path='/services' element={<MoreServices/>}/>
             <Route path='/buy-token' element={<BuyTokenPage/>}/>
             <Route path="/temp-mail" element={<TempMailPage/>}/>
             <Route path="/blog" element={<Blog/>} />
+            <Route path="/about" element={<AboutUs/>} />
+            <Route path="/contact" element={<ContactUs/>} />
             <Route path="/blog/:slug" element={<BlogDetails />}/>
             <Route path="/website-development" element={<WebsiteDevelopment />} />
             <Route path="*" element={<PageNotFound/>} />

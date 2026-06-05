@@ -14,7 +14,7 @@ const HeroSection = () => {
       <div className='flex flex-col  w-full'>
         
 
-        <div className=" flex-1 px-5 sm:px-10 pt-10 md:pt-25 pb-24 md:ml-10 z-4 text-white flex  flex-col justify-center  ">
+        <div className=" flex-1 px-5 sm:px-10 pt-10 md:pt-18 pb-8 pb-24 md:ml-10 z-4 text-white flex  flex-col justify-center  ">
 
       
           <div className="inline-flex w-fit items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs backdrop-blur-md border border-black/20 shadow">
@@ -44,9 +44,9 @@ const HeroSection = () => {
           {/* CTA */}
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <button
-              onClick={() => navigate('/dsc-pricing')}
+              onClick={() => navigate('/digital-signature-certificate')}
               className=" relative inline-flex items-center gap-2 
-    bg-gradient-to-r from-[#192f72] to-[#01012a] px-4 sm:px-6 py-3 sm:py-6 text-xs font-medium text-white
+    bg-gradient-to-r from-[#192f72] to-[#01012a] px-4 sm:px-6 py-3 sm:py-6 text-xs sm:text-sm font-medium text-white
   shadow-[0_10px_30px_rgba(0,0,0,0.15)] active:scale-95 hover:text-white 
   hover:shadow-[0_15px_40px_rgba(0,0,0,0.2)] transition-all cursor-pointer group overflow-hidden border
 ">
@@ -59,7 +59,7 @@ const HeroSection = () => {
             <button
               onClick={() => navigate('/dsc-utilities')}
               className=" relative inline-flex items-center gap-2 
-    bg-white px-4 sm:px-6 py-3 sm:py-6 text-xs font-medium text-black
+    bg-white px-4 sm:px-6 py-3 sm:py-6 text-xs sm:text-sm font-medium text-black
   shadow-[0_10px_30px_rgba(0,0,0,0.15)] active:scale-95 hover:text-white 
   hover:shadow-[0_15px_40px_rgba(0,0,0,0.2)] transition-all cursor-pointer group overflow-hidden border
 "

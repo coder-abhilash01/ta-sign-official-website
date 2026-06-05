@@ -4,102 +4,77 @@ import { useGSAP } from "@gsap/react";
 
 const Loader = ({ onComplete }) => {
   const containerRef = useRef(null);
+  const logo = useRef(null);
 
   useGSAP(() => {
-    const letters = gsap.utils.toArray(".loader-letter");
+    // 1. Initial setup: Logo ko shuruat mein thoda niche aur transparent rakhein
+    gsap.set([logo.current, ".loader-sub"], {
+      opacity: 0,
+      y: 40,
+    });
 
     const tl = gsap.timeline({
       onComplete: () => {
+        // Jab sab khatam ho jaye, tab container ko slide-up karke off-screen karein
         gsap.to(containerRef.current, {
           yPercent: -100,
-          duration: 1.2,
+          duration: 1,
           ease: "power4.inOut",
-          delay: 0.2,
           onComplete: onComplete,
         });
       },
     });
 
-    // Initial state
-    gsap.set(letters, {
-      rotateY: 90,
-      y : -90,
-      transformOrigin: "right center",
-      transformStyle: "preserve-3d",
-    });
+    // 2. Curtains ka exit transition start hoga
+    tl.to(".wrap", {
+      scaleY: 0,
+      transformOrigin: "bottom",
+      stagger: 0.18,
+      duration: 1,
+      ease: "power3.inOut",
+    }, "+=0.4"); // Shuruat mein halka sa hold static look ke liye
 
-    // Flip reveal animation
-
-    // tl.to(letters, {
-    //   y:0,
-    //   duration: 1.4,
-    //   stagger: 0.08,
-    //   ease: "power4.out",
-    // });
-
-    // tl.to(letters, {
-    //   rotateY: 0,
-    //   duration: 1.4,
-    //   stagger: 0.08,
-    //   ease: "power4.out",
-    // });
-
-    // Slight scale settle
-    tl.fromTo(
-      ".loader-text",
-      {
-        scale: 0.96,
-      },
-      {
-        scale: 1,
-        duration: 1,
-        ease: "expo.out",
-      },
-      0
-    );
-
-    // Fade lower text
-    tl.fromTo(
-      ".loader-sub",
-      {
-        opacity: 0,
-        y: 20,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power3.out",
-      },
-      "-=0.6"
-    );
-
-    tl.from(".logo", {
-      opacity: 0,
-      
-      duration: 0.8,
+    // 3. 💥 CONNECTED STEP: Jaise hi curtains shrink hona SHURU hon (`<`), 
+    // waise hi peeche se logo aur text upar reveal hone lgenge
+    tl.to([logo.current, ".loader-sub"], {
+      opacity: 1,
+      y: 0,
+      stagger: 0.2,
+      duration: 1.2,
       ease: "power3.out",
-    }, "-=0.6");
-  }, []);
+    }, "<+=0.9"); // Curtains ke khulne ke exact 0.2s baad logo smooth entry lega
+
+  }, { scope: containerRef });
 
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 z-[9999] bg-white text-black overflow-hidden"
+      className="fixed inset-0 z-[9999] bg-white text-black overflow-hidden select-none"
     >
-     
+      {/* BACKGROUND CURTAIN LAYER */}
+      <div className="absolute inset-0 w-full h-screen grid grid-cols-4 z-10 pointer-events-none">
+        <div className="wrap bg-slate-900 border-r border-white/5" />
+        <div className="wrap bg-slate-900 border-r border-white/5" />
+        <div className="wrap bg-slate-900 border-r border-white/5" />
+        <div className="wrap bg-slate-900" />
+      </div>
 
+      {/* FOREGROUND BRANDING LAYER */}
       <div
-        className="w-full h-full flex flex-col items-center justify-center"
-        style={{
-          perspective: "1400px",
-        }}
+        className="absolute inset-0 w-full h-full flex flex-col items-center justify-center z-20 pointer-events-none"
+        style={{ perspective: "1400px" }}
       >
-       
-<img src="/logo.png" alt="logo" className='logo h-40 md:h-60  object-cover mt-4 ' />
-        
-        <div className="loader-sub   overflow-hidden">
-          <p className="text-[14px] text-center md:text-sm uppercase tracking-[0.35em] text-black/70 font-medium">
+        <div className="overflow-hidden py-2">
+          <img
+            src="/logo.png"
+            ref={logo}
+            alt="logo"
+            className="h-20 md:h-24 object-contain mb-4 will-change-transform"
+          />
+        </div>
+
+        <div className="loader-sub overflow-hidden px-4">
+          <p className="text-[12px] text-center md:text-sm uppercase tracking-[0.35em] text-black/80 font-medium">
             Digital Signature & Compliance Services
           </p>
         </div>

@@ -14,11 +14,11 @@ const infos = [
   {
     title: "ISO Certification",
     infoText: `ISO certification demonstrates your organization’s commitment to quality, safety, and efficiency.`,
-    link: "/buy-iso"
+    link: "/iso-certification"
   },
 
   {
-    title: "Custom Website",
+    title: " Website Development",
     infoText : "we build modern websites that help businesses build trust,generate leads and grow online.",
     link : "/website-development"
   }
@@ -27,7 +27,7 @@ const infos = [
 const ServiceInfo = () => {
   const navigate = useNavigate()
   return (
-    <section className='mt-20 max-w-7xl mx-auto px-6'>
+    <section className='mt-20 max-w-7xl mx-auto px-6 mb-30'>
       {infos.map((info, i) => (
         <div
         onClick={() =>{navigate(info.link)}} 

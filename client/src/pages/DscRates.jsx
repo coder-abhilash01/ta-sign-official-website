@@ -17,7 +17,7 @@ const DscRates = () => {
 
       {/* TOP */}
 
-      <div className="relative w-full md:h-[42vh] mb-15 ">
+      <div className="relative w-full lg:h-[42vh] mb-15 ">
         <img src="/hero-section-imgs/dsc-img.png" className=" w-full h-full object-cover"/>
         <div className="w-full h-full absolute top-0 left-0 bg-black/20 "/>
       </div>

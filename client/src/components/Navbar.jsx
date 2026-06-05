@@ -16,7 +16,7 @@ const Navbar = () => {
     <nav className='w-full  z-400 bg-white text-black  border  flex justify-between 
     items-center py-3 px-4 md:px-10 shadow-md  flex-wrap font-[Montserrat] '>
 
-     <Link to="/home"><img src="/logo.png" alt="logo" className='h-15 md:h-18  object-cover ' /></Link> 
+     <Link to="/home"><img src="/logo.png" alt="logo" className='h-13 md:h-14  object-cover ' /></Link> 
 
 
       <div className='md:flex   hidden items-center justify-around gap-6   '>
@@ -46,7 +46,7 @@ const Navbar = () => {
 
 
 
-          <li className='hidden  lg:flex text-sm font-medium'>
+          <li className='hidden  xl:flex text-sm font-medium'>
             <span className='flex  items-center gap-2 mr-1'>
               <PhoneCall size={18}
                 className="text-blue-600 animate-[ring_2s_ease-in-out_infinite]"

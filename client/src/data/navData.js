@@ -13,17 +13,17 @@ export const navLists = [
   },
   {
     title: "DSC Certificates",
-    link: "/dsc-pricing",
+    link: "/digital-signature-certificate",
     icon: FileSignature,
   },
   {
     title: "ISO Certificates",
-    link: "/buy-iso",
+    link: "/iso-certification",
     icon: BadgeCheck,
   },
   {
     title: "Trademark",
-    link: "/buy-trademark",
+    link: "/trademark-registration",
     icon: ShieldCheck,
   },
    {

@@ -1,10 +1,15 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
+import FounderDetail from './FounderDetail'
 
 const AboutUs = () => {
+  const {pathname} = useLocation()
+  console.log(pathname)
   return (
-    <section className="max-w-7xl mx-auto sm:px-6 mt-40">
+    <section className="max-w-7xl mx-auto sm:px-6 mt-10 pb-10">
 
       {/* TOP */}
+     
 
       <div className="grid lg:grid-cols-12 gap-16 border-b border-neutral-200 pb-16">
 
@@ -87,7 +92,7 @@ const AboutUs = () => {
         </div>
 
       </div>
-
+<div className='max-w-4xl mx-auto'>{pathname === "/about" && <FounderDetail/>}</div> 
     </section>
   )
 }
