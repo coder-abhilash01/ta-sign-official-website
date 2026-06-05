@@ -6,6 +6,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { plans } from "@/data/dscData";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -13,7 +14,19 @@ import { plans } from "@/data/dscData";
 const DscRates = () => {
 
   return (
-    <section className="w-full min-h-screen bg-[#FCFCFC] pb-24  font-[Montserrat]">
+ <>
+ <Helmet>
+  <title>
+    Digital Signature Certificate (DSC) Provider in Kanpur | TA Sign
+  </title>
+
+  <meta
+    name="description"
+    content="Get Class 3 DSC, DGFT DSC, signing and encryption certificates with professional support from TA Sign."
+  />
+</Helmet>
+
+ <section className="w-full min-h-screen bg-[#FCFCFC] pb-24  font-[Montserrat]">
 
       {/* TOP */}
 
@@ -29,7 +42,7 @@ const DscRates = () => {
         </p>
 
         <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-black">
-          DSC Certificate Plans
+          Digital Signature <br/> Certificate Plans
         </h1>
 
         <p className="text-gray-600 text-lg mt-6 max-w-2xl mx-auto leading-8">
@@ -173,6 +186,7 @@ const DscRates = () => {
         )}
       </div>
     </section>
+</>  
   );
 };
 

@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 import FounderDetail from "@/components/FounderDetail";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -17,7 +18,19 @@ const ContactUs = () => {
 
 
   return (
-    <section className="w-full min-h-screen bg-[#FCFCFC] py-20 px-6 md:px-10 ">
+    <>
+    <Helmet>
+  <title>
+    Contact TA Sign | DSC, ISO & Trademark Support
+  </title>
+
+  <meta
+    name="description"
+    content="Contact TA Sign for Digital Signature Certificates, Trademark Registration, ISO Certification and compliance services."
+  />
+</Helmet>
+
+ <section className="w-full min-h-screen bg-[#FCFCFC] py-20 px-6 md:px-10 ">
 
       <div className="max-w-7xl mx-auto grid  lg:grid-cols-2 gap-16 items-start ">
 
@@ -65,6 +78,8 @@ const ContactUs = () => {
         </div>
       </div>
     </section>
+    </>
+   
   );
 };
 

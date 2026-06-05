@@ -1,12 +1,24 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 import FounderDetail from './FounderDetail'
+import { Helmet } from 'react-helmet-async'
 
 const AboutUs = () => {
   const {pathname} = useLocation()
   console.log(pathname)
   return (
-    <section className="max-w-7xl mx-auto sm:px-6 mt-10 pb-10">
+    <>
+    <Helmet>
+  <title>
+    About TA Sign | Trusted Business Compliance Services
+  </title>
+
+  <meta
+    name="description"
+    content="Learn about TA Sign and our mission to provide DSC, Trademark Registration, ISO Certification and business compliance services."
+  />
+</Helmet>
+<section className="max-w-7xl mx-auto sm:px-6 mt-10 pb-10">
 
       {/* TOP */}
      
@@ -94,6 +106,8 @@ const AboutUs = () => {
       </div>
 <div className='max-w-4xl mx-auto'>{pathname === "/about" && <FounderDetail/>}</div> 
     </section>
+</>
+    
   )
 }
 

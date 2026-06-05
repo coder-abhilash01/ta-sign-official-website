@@ -153,8 +153,8 @@ const Utilities = () => {
                 </TableHeader>
 
                 <TableBody>
-                  {tokenDrivers.map((driver) => (
-                    <TableRow key={driver.name}>
+                  {tokenDrivers.map((driver, i) => (
+                    <TableRow key={i}>
                       <TableCell className="font-medium">
                         {driver.name}
                       </TableCell>
@@ -216,26 +216,29 @@ const Utilities = () => {
                 </TableHeader>
 
                 <TableBody>
-                  {runtimeSetup.map((runtime) => (
-                    <TableRow key={runtime.name}>
+                  {runtimeSetup.map((setup, i) => (
+                    <TableRow key={i}>
                       <TableCell className="font-medium">
-                        {runtime.name}
+                        {setup.name}
                       </TableCell>
 
                       <TableCell>
-                        {runtime.version}
+                        {setup.version}
                       </TableCell>
 
                       <TableCell>
-                        {runtime.platform}
+                        {setup.platform}
                       </TableCell>
 
                       <TableCell className="flex items-center justify-end">
                         
-                        <button className="flex items-center gap-2 text-sm cursor-pointer bg-blue-700 hover:bg-blue-600 text-white p-2 px-4 rounded-full">
+                        <a 
+                        href={setup.url}
+                        download
+                        className="flex items-center gap-2 text-sm cursor-pointer bg-blue-700 hover:bg-blue-600 text-white p-2 px-4 rounded-full">
                           <Download className="h-4 w-4" />
                           Download
-                        </button>
+                        </a>
                       </TableCell>
                     </TableRow>
                   ))}

@@ -170,7 +170,7 @@ const FranchisePopup = () => {
         </div>
       )}
 
-      {/* FIXED SLIP BUTTON */}
+      
       {showSlip && !open && (
         <button
           ref={buttonRef}

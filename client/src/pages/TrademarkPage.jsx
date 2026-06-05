@@ -13,6 +13,7 @@ import {
 import CallToAction from "@/components/CallToAction";
 import { documents, plans, process, trustPoints } from "@/data/trademark";
 import TeamSupportSection from "@/components/TeamSupportSection";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -20,7 +21,20 @@ import TeamSupportSection from "@/components/TeamSupportSection";
 
 const TrademarkPage = () => {
   return (
-    <section className="w-full bg-[#f6f8f8] text-neutral-900 overflow-hidden">
+    <>
+    <Helmet>
+  <title>
+    Trademark Registration Services in India | TA Sign
+  </title>
+
+  <meta
+    name="description"
+    content="Protect your brand with professional trademark registration services, documentation assistance and filing support."
+  />
+</Helmet>
+
+
+   <section className="w-full bg-[#f6f8f8] text-neutral-900 overflow-hidden">
       {/* HERO */}
 
       <section className=" pb-10 ">
@@ -342,6 +356,8 @@ const TrademarkPage = () => {
      supportMessage= "Get professional guidance for trademark registration, filing and documentation."
      />
     </section>
+</>
+ 
   );
 };
 

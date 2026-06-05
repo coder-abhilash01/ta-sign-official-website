@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 
 const items = [
@@ -28,7 +29,19 @@ const items = [
 
 const WebsiteDevelopment = () => {
   return (
-    <section className="py-10 w-full bg-[#f8f8f6] text-neutral-900  font-[Montserrat] ">
+    <>
+    <Helmet>
+  <title>
+    Website Development Services | TA Sign
+  </title>
+
+  <meta
+    name="description"
+    content="Professional website development services for businesses looking to establish a strong online presence."
+  />
+</Helmet>
+
+ <section className="py-10 w-full bg-[#f8f8f6] text-neutral-900  font-[Montserrat] ">
   <div className="w-full mx-auto px-6">
 
     <div className="grid lg:grid-cols-[1fr_600px] gap-20">
@@ -181,6 +194,8 @@ className=" flex border border-black bg-black rounded-full group px-6 py-3 mb-4 
 
   </div>
 </section>
+    </>
+   
   );
 };
 

@@ -1,43 +1,48 @@
+import React from "react";
+import { Helmet } from "react-helmet-async";
 
-import React, { use, useEffect, useRef, useState } from 'react'
-import gsap from 'gsap'
-import Marquee from '@/components/Marquee';
-import HeroSection from '@/components/HeroSection';
-import WhattsappFloatIcon from '@/components/WhattsappFloatIcon';
-
-import ServiceCardPreview from '@/components/ServiceCardPreview';
-import Footer from '@/components/Footer';
-import Carousel from '@/components/Carousel';
-import FrequentlyAskedQues from '@/components/FrequentlyAskedQues';
-import ContactUs from './ContactUs';
-import QuickAccessTools from '@/components/QuickAccessTools';
+import Marquee from "@/components/Marquee";
+import HeroSection from "@/components/HeroSection";
+import WhattsappFloatIcon from "@/components/WhattsappFloatIcon";
+import ServiceCardPreview from "@/components/ServiceCardPreview";
+import Carousel from "@/components/Carousel";
+import FrequentlyAskedQues from "@/components/FrequentlyAskedQues";
+import ContactUs from "./ContactUs";
+import QuickAccessTools from "@/components/QuickAccessTools";
 
 const Home = () => {
-
-
-
   return (
-    <div className='z-20'>
+    <>
+      <Helmet>
+        <title>
+          TA Sign | Digital Signature Certificate, ISO & Trademark Services
+        </title>
 
-      <HeroSection />
-      <QuickAccessTools/>
+        <meta
+          name="description"
+          content="TA Sign provides Digital Signature Certificates (DSC), Trademark Registration, ISO Certification, USB Tokens and business compliance services across India."
+        />
+      </Helmet>
 
-      <Marquee />
+      <div className="z-20">
+        <HeroSection />
 
+        <QuickAccessTools />
 
-      <ServiceCardPreview />
+        <Marquee />
 
+        <ServiceCardPreview />
 
-      <Carousel />
-      <FrequentlyAskedQues />
-      
-<ContactUs/>
-      <WhattsappFloatIcon />
-      
+        <Carousel />
 
+        <FrequentlyAskedQues />
 
-    </div>
-  )
-}
+        <ContactUs />
 
-export default Home
+        <WhattsappFloatIcon />
+      </div>
+    </>
+  );
+};
+
+export default Home;

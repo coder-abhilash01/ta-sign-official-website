@@ -78,13 +78,13 @@ export const runtimeSetup = [
     name: "Embridge",
     platform: "Windows ",
     version : "Latest",
-    url : "client/public/downloads/emBridge.exe"
+    url : "/downloads/emBridge.exe"
   },
    {
     name: "Embridge",
     version: "Latest",
     platform: "Mac ",
-    url : "client/public/downloads/emBridge.zip"
+    url : "/downloads/emBridge.zip"
   },
 
 ]

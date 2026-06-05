@@ -12,12 +12,26 @@ import { Link } from "react-router-dom";
 import CallToAction from "@/components/CallToAction";
 import { assistanceData, industries, isoCertificates, process, trustPoints } from "@/data/Iso";
 import Industries from "@/components/Industries";
+import { Helmet } from "react-helmet-async";
 
 
 
 const ISOPage = () => {
     return (
-        <section className="w-full bg-[#FCFCFC] overflow-hidden">
+        <>
+        
+        <Helmet>
+  <title>
+    ISO Certification Services in India | TA Sign
+  </title>
+
+  <meta
+    name="description"
+    content="Apply for ISO certification with expert guidance and documentation support for businesses across India."
+  />
+</Helmet>
+
+ <section className="w-full bg-[#FCFCFC] overflow-hidden">
 
             {/* HERO */}
 
@@ -445,6 +459,8 @@ const ISOPage = () => {
             </section>
 
         </section>
+</>
+       
     );
 };
 

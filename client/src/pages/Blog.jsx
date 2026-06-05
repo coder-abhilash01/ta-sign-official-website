@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import BlogCard from "../components/BlogCard";
 import { blogs, popularSearches, faqData } from "../data/blogData";
 import { Search, ArrowRight } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 const Blog = () => {
   const [search, setSearch] = useState("");
@@ -31,7 +32,19 @@ const Blog = () => {
   }, [search, activeCategory]);
 
   return (
-    <section className="bg-[#f8f8f6] min-h-screen">
+    <>
+    <Helmet>
+  <title>
+    Business Compliance & DSC Blog | TA Sign
+  </title>
+
+  <meta
+    name="description"
+    content="Read articles about Digital Signature Certificates, Trademark Registration, ISO Certification and business compliance."
+  />
+</Helmet>
+
+  <section className="bg-[#f8f8f6] min-h-screen">
       {/* HERO */}
 
       <section className="border-b border-neutral-200">
@@ -327,6 +340,8 @@ const Blog = () => {
         </div>
       </section>
     </section>
+</>
+  
   );
 };
 

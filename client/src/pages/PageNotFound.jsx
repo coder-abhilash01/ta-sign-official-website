@@ -5,7 +5,7 @@ const PageNotFound = () => {
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#FFFFFF] flex items-center justify-center px-6">
 
-      {/* Background Blur */}
+    
 
 
       <div className="relative max-w-4xl mx-auto text-center">

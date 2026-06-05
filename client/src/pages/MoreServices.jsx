@@ -2,10 +2,25 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 import { services } from "@/data/servicesData";
 import TeamSupportSection from "@/components/TeamSupportSection";
+import { Helmet } from "react-helmet-async";
 
 const MoreServices = () => {
   return (
-    <section className="bg-[#FCFCFC] pb-20 ">
+
+    <>
+   <Helmet>
+  <title>
+    FSSAI, GeM Portal, GMP & Startup India Registration Services | TA Sign
+  </title>
+
+  <meta
+    name="description"
+    content="Get professional assistance for FSSAI Registration, GeM Portal Registration, GMP Certification and Startup India Registration with expert guidance from TA Sign."
+  />
+</Helmet>
+
+
+<section className="bg-[#FCFCFC] pb-20 ">
       <div className="w-full  ">
 
         {/* Heading */}
@@ -97,6 +112,8 @@ const MoreServices = () => {
 
       </div>
     </section>
+</>
+    
   );
 };
 

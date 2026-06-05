@@ -51,7 +51,7 @@ const Loader = ({ onComplete }) => {
       ref={containerRef}
       className="fixed inset-0 z-[9999] bg-white text-black overflow-hidden select-none"
     >
-      {/* BACKGROUND CURTAIN LAYER */}
+      
       <div className="absolute inset-0 w-full h-screen grid grid-cols-4 z-10 pointer-events-none">
         <div className="wrap bg-slate-900 border-r border-white/5" />
         <div className="wrap bg-slate-900 border-r border-white/5" />
@@ -59,7 +59,7 @@ const Loader = ({ onComplete }) => {
         <div className="wrap bg-slate-900" />
       </div>
 
-      {/* FOREGROUND BRANDING LAYER */}
+      
       <div
         className="absolute inset-0 w-full h-full flex flex-col items-center justify-center z-20 pointer-events-none"
         style={{ perspective: "1400px" }}

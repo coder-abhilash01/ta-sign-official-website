@@ -41,7 +41,7 @@ const Footer = () => {
         grid grid-cols-1 md:grid-cols-2
         lg:grid-cols-4 gap-14"
       >
-        {/* LEFT COLUMN: BRAND */}
+    
         <div className="space-y-4">
           <img
             src="/logo.png"
@@ -58,7 +58,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* SERVICES COLUMN */}
+        {/* SERVICES  */}
         <div>
           <h3 className="text-sm uppercase tracking-[0.18em] text-blue-400 mb-7">
             Services
@@ -84,7 +84,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* RESOURCES COLUMN */}
+        {/* RESOURCES  */}
         <div>
           <h3 className="text-sm uppercase tracking-[0.18em] text-blue-400 mb-7">
             Resources
@@ -113,7 +113,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* CONTACT COLUMN (Fixed & Enhanced) */}
+        
         <div>
           <h3 className="text-sm uppercase tracking-[0.18em] text-blue-400 mb-7">
             Contact
@@ -132,7 +132,7 @@ const Footer = () => {
               </div>
             </li>
 
-            {/* Email Section */}
+            {/* Email  */}
             <li className="text-sm">
               <a href="mailto:dsc.knp1@gmail.com" className="text-neutral-300 hover:text-white transition flex gap-3 items-center">
                 <MailIcon size={18} className="text-neutral-400 shrink-0"/> 
@@ -140,7 +140,7 @@ const Footer = () => {
               </a>
             </li>
 
-            {/* Address Section */}
+            {/* Address  */}
             <li className="text-sm text-neutral-300 flex gap-3 items-start leading-6">
               <MapPinHouse size={18} className="text-neutral-400 mt-0.5 shrink-0" />
               <span>
@@ -165,7 +165,7 @@ const Footer = () => {
             Copyright © 2026 TA SIGN. All rights reserved.
           </p>
 
-          {/* Social icons seamlessly placed right side */}
+        
           <SocialLinks />
         </div>
       </div>
