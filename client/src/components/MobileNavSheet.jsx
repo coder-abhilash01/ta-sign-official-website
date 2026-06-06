@@ -18,7 +18,7 @@ import {
   MoveRight,
 } from "lucide-react";
 
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { navLists, servicesText } from "@/data/navData";
 import { lenis } from "./utils/lenis";
 
@@ -44,6 +44,7 @@ const usefulLinks = [
 const MobileNavSheet = ({ side, className }) => {
 
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate()
   useEffect(() => {
     if (open) {
       lenis?.stop();
@@ -167,8 +168,12 @@ const MobileNavSheet = ({ side, className }) => {
             {/* CTA */}
 
             <div className="px-6 mt-8">
-              <Link
-                to="/buy-token"
+              <button
+              onClick={()=>{
+                navigate("/buy-token")
+                 setTimeout(() => setOpen(false), 200)
+              }}
+              
                 className="group w-full flex items-center justify-center gap-2 
               bg-black text-white py-3 rounded-full 
               hover:bg-neutral-800 transition cursor-pointer"
@@ -179,7 +184,7 @@ const MobileNavSheet = ({ side, className }) => {
                   size={18}
                   className="group-hover:translate-x-1 transition mt-1"
                 />
-              </Link>
+              </button>
             </div>
 
             {/* USEFUL LINKS */}

@@ -7,8 +7,8 @@ import WhattsappFloatIcon from "@/components/WhattsappFloatIcon";
 import ServiceCardPreview from "@/components/ServiceCardPreview";
 import Carousel from "@/components/Carousel";
 import FrequentlyAskedQues from "@/components/FrequentlyAskedQues";
-import ContactUs from "./ContactUs";
 import QuickAccessTools from "@/components/QuickAccessTools";
+import ContactSection from "@/components/ContactSection";
 
 const Home = () => {
   return (
@@ -37,7 +37,7 @@ const Home = () => {
 
         <FrequentlyAskedQues />
 
-        <ContactUs />
+        <ContactSection />
 
         <WhattsappFloatIcon />
       </div>

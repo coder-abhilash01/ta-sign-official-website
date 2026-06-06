@@ -13,8 +13,8 @@ import BlogDetails from '@/pages/BlogDetails'
 import MoreServices from '@/pages/MoreServices'
 import WebsiteDevelopment from '@/pages/WebsiteDevelopment'
 import PageNotFound from '@/pages/PageNotFound'
-import AboutUs from '@/components/AboutUs'
 import ContactUs from '@/pages/ContactUs'
+import About from '@/pages/About'
  
  const MainRoutes = () => {
    return (
@@ -32,7 +32,7 @@ import ContactUs from '@/pages/ContactUs'
             <Route path='/buy-token' element={<BuyTokenPage/>}/>
             <Route path="/temp-mail" element={<TempMailPage/>}/>
             <Route path="/blog" element={<Blog/>} />
-            <Route path="/about" element={<AboutUs/>} />
+            <Route path="/about" element={<About/>} />
             <Route path="/contact" element={<ContactUs/>} />
             <Route path="/blog/:slug" element={<BlogDetails />}/>
             <Route path="/website-development" element={<WebsiteDevelopment />} />

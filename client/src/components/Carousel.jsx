@@ -11,8 +11,8 @@ const certificates = [
 
 const size = [
   "h-[200px] md:h-[260px] md:w-[340px] w-[280px]",
-  " h-[200px] md:h-[260px] md:w-[180px] w-[180px]",
-  " h-[200px] md:h-[260px] md:w-[210px] w-[280px]",
+  " h-[200px] md:h-[260px] md:w-[180px] w-[150px]",
+  " h-[200px] md:h-[260px] md:w-[210px] w-[160px]",
 
   
 ];
