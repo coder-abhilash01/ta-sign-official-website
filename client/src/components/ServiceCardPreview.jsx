@@ -10,34 +10,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ServicesSection = () => {
   const containerRef = useRef(null);
-  const cardsRef = useRef(null);
+ 
 
-  // standard hook useGSAP for optimal React scoping
-  useGSAP(() => {
-    gsap.fromTo(
-      ".service-card-trigger", // target wrapper to handle components cleanly
-      {
-        y: 120,
-        opacity: 0,
-        scale: 0.92,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        scale: 1,
-        duration: 1.6,
-        stagger: 0.25, // organic staggered entry
-        ease: "power4.out", // premium mechanical deceleration curve instead of "none"
-        scrollTrigger: {
-          trigger: cardsRef.current,
-          start: "top 85%",
-          end: "bottom 60%",
-          scrub: 1,
-          markers: false, // production grade setting
-        },
-      }
-    );
-  }, { scope: containerRef });
 
   return (
     <section ref={containerRef} className="w-full bg-neutral-50/50 py-32 px-6 selection:bg-[#0040FA] selection:text-black">

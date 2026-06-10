@@ -32,10 +32,10 @@ import About from '@/pages/About'
             <Route path='/buy-token' element={<BuyTokenPage/>}/>
             <Route path="/temp-mail" element={<TempMailPage/>}/>
             <Route path="/blog" element={<Blog/>} />
-            <Route path="/about" element={<About/>} />
-            <Route path="/contact" element={<ContactUs/>} />
             <Route path="/blog/:slug" element={<BlogDetails />}/>
             <Route path="/website-development" element={<WebsiteDevelopment />} />
+ <Route path="/about" element={<About/>} />
+            <Route path="/contact" element={<ContactUs/>} />
             <Route path="*" element={<PageNotFound/>} />
 
        </Routes>

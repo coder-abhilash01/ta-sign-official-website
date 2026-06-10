@@ -8,6 +8,7 @@ const items = [
     number: "01",
     title: "UrbanVibe E-Commerce",
     image: "/projects/project1.jpeg",
+    link: "https://urbanvibeshopping.vercel.app/",
     desc: "Designed to create a modern shopping experience with clear product discovery, responsive layouts and stronger brand perception.",
   },
 
@@ -15,13 +16,15 @@ const items = [
     number: "02",
     title: "Portfolio Website ",
     image: "/projects/project5.png",
+    link: "https://abhilash-portfolio-gray.vercel.app/",
     desc: "Focused on simplifying complex services through structured content, intuitive navigation and a more trustworthy digital presence.",
   },
 
   {
     number: "03",
-    title: "Personal Portfolio",
+    title: "Moody Player ",
     image: "/projects/project4.jpeg",
+    link: "https://moody-player-ten.vercel.app/",
     desc: "A portfolio experience built around motion, visual storytelling and modern interaction design to showcase work effectively.",
   },
 ];
@@ -164,11 +167,13 @@ className=" flex border border-black bg-black rounded-full group px-6 py-3 mb-4 
 
 
   <div className="relative overflow-hidden w-full  md:h-[300px] group ">
-    <img
+   <a href={item.link}
+   target="_blank">
+  <img
       src={item.image}
       alt={item.title}
       className="md:absolute inset-0 w-full  object-cover transition duration-700 group-hover:scale-105"
-    />
+    />  </a> 
   </div>
 
   <div className="mt-5 flex flex-col md:flex-row justify-between gap-2 md:gap-8">

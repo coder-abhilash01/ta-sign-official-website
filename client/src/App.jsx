@@ -16,10 +16,11 @@ const app = () =>{
 
   const [isLoading, setIsLoading] = useState(true);
 
-   useGSAP(() => {
-  if (window.innerWidth < 768) return;
+useGSAP(() => {
+  if (isLoading) return;
 
-  lenis.on("scroll", ScrollTrigger.update);
+  const updateScroll = () => ScrollTrigger.update();
+  lenis.on("scroll", updateScroll);
 
   let rafId;
 
@@ -30,10 +31,18 @@ const app = () =>{
 
   rafId = requestAnimationFrame(raf);
 
+  const handleResize = () => {
+    ScrollTrigger.refresh();
+  };
+
+  window.addEventListener("resize", handleResize);
+
   return () => {
     cancelAnimationFrame(rafId);
+    lenis.off("scroll", updateScroll);
+    window.removeEventListener("resize", handleResize);
   };
-}, []);
+}, [isLoading]);
   return <div  className="w-full backface-visible">
 <ScrollToTop/>
     

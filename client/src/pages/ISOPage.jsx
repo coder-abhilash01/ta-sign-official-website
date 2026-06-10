@@ -13,6 +13,7 @@ import CallToAction from "@/components/CallToAction";
 import { assistanceData, industries, isoCertificates, process, trustPoints } from "@/data/Iso";
 import Industries from "@/components/Industries";
 import { Helmet } from "react-helmet-async";
+import TeamSupportSection from "@/components/TeamSupportSection";
 
 
 
@@ -73,6 +74,13 @@ const ISOPage = () => {
                                 for businesses, consultants and firms
                                 across India.
                             </p>
+
+                                       <Link
+                                          to="/blog/iso-certification-in-kanpur"
+                                          className="text-blue-600 hover:underline font-medium block mb-2"
+                                        >
+                                          Learn more about ISO →
+                                        </Link>
 
                             {/* TRUST POINTS */}
 
@@ -272,191 +280,23 @@ const ISOPage = () => {
 
             </section>
 
-            {/* PROCESS */}
-
-            <section className="pb-24">
-
-                <div className="max-w-7xl mx-auto px-6">
-
-                    <div
-                        className="bg-white rounded-[40px]
-            border border-neutral-200
-            p-10 lg:p-14"
-                    >
-
-                        <div className="max-w-2xl">
-
-                            <p
-                                className="text-sm uppercase
-                tracking-[0.25em]
-                text-blue-700 mb-5"
-                            >
-                                Process
-                            </p>
-
-                            <h2
-                                className="text-4xl md:text-5xl
-                font-semibold tracking-tight
-                text-neutral-900"
-                            >
-                                Simple Registration Flow
-                            </h2>
-
-                        </div>
-
-                        <div
-                            className="grid md:grid-cols-5
-              gap-6 mt-16"
-                        >
-
-                            {process.map((item, index) => (
-                                <div key={index}>
-
-                                    <div
-                                        className="w-14 h-14 rounded-2xl
-                    bg-[#0040FA] text-white flex
-                    items-center justify-center
-                    font-semibold text-lg"
-                                    >
-                                        0{index + 1}
-                                    </div>
-
-                                    <p
-                                        className="mt-5 text-lg
-                    font-medium text-neutral-800"
-                                    >
-                                        {item}
-                                    </p>
-
-                                </div>
-                            ))}
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
+    
 
             {/* INDUSTRIES */}
 
             <Industries />
             {/* QUICK SUPPORT */}
 
-            <section className="pb-24">
 
-                <div className="max-w-7xl mx-auto px-6">
-
-                    <div
-                        className="bg-white border border-neutral-200
-            rounded-[36px] p-8 lg:p-12"
-                    >
-
-                        <div
-                            className="flex flex-col lg:flex-row
-              lg:items-end justify-between gap-10"
-                        >
-
-                            <div className="max-w-2xl">
-
-                                <p
-                                    className="text-sm uppercase
-                  tracking-[0.25em]
-                  text-blue-700 mb-5"
-                                >
-                                    Registration Support
-                                </p>
-
-                                <h2
-                                    className="text-4xl md:text-5xl
-                  font-semibold tracking-tight
-                  text-neutral-900 leading-tight"
-                                >
-                                    Professional ISO
-                                    <br />
-                                    Assistance
-                                </h2>
-
-                                <p
-                                    className="mt-6 text-lg
-                  leading-relaxed text-neutral-600"
-                                >
-                                    We assist businesses, CA firms,
+               <TeamSupportSection
+                      heading="Need Help With ISO Certification?"
+                      subHeading="ISO Certification Support"
+                      supportMessage=" We assist businesses, CA firms,
                                     consultants and professionals with
                                     ISO documentation, registration and
-                                    certification support.
-                                </p>
+                                    certification support."
+                    />
 
-                            </div>
-
-                            <a
-                                href="https://wa.me/919306746685"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="group h-14 px-8 rounded-full
-                bg-[#0040FA] text-white flex items-center
-                justify-center gap-3 w-fit
-                hover:bg-[#0030c9] transition-all"
-                            >
-                                Chat On WhatsApp
-
-                                <ArrowRight
-                                    size={18}
-                                    className="group-hover:translate-x-1 transition"
-                                />
-
-                            </a>
-
-                        </div>
-
-                        <div className="grid md:grid-cols-3 gap-5 mt-14">
-
-                            {assistanceData.map((item, index) => (
-                                <div
-                                    key={index}
-                                    className="rounded-[28px]
-                  border border-neutral-200
-                  p-6 hover:border-[#0040FA]
-                  transition-all duration-300"
-                                >
-
-                                    <div
-                                        className="w-12 h-12 rounded-2xl
-                    bg-[#eef3ff] flex items-center
-                    justify-center"
-                                    >
-                                        <ShieldCheck
-                                            size={22}
-                                            className="text-[#0040FA]"
-                                        />
-                                    </div>
-
-                                    <h3
-                                        className="mt-5 text-xl
-                    font-semibold tracking-tight
-                    text-neutral-900"
-                                    >
-                                        {item.title}
-                                    </h3>
-
-                                    <p
-                                        className="mt-3 text-neutral-600
-                    leading-relaxed text-[15px]"
-                                    >
-                                        {item.desc}
-                                    </p>
-
-                                </div>
-                            ))}
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
 
         </section>
 </>

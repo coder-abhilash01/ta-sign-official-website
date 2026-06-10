@@ -3,7 +3,7 @@ import React from 'react'
 
 const TeamSupportSection = ({heading,subHeading,supportMessage}) => {
   return (
-     <section className="pb-24">
+     <section className="pb-24 mt-10">
         <div className="max-w-7xl mx-auto px-6">
           <div
             className="rounded-[32px]
@@ -21,7 +21,7 @@ const TeamSupportSection = ({heading,subHeading,supportMessage}) => {
                   uppercase tracking-[0.25em]
                   text-sm mb-5"
                 >
-                 {subHeading}
+                 {subHeading || ""}
                 </p>
 
                 <h2

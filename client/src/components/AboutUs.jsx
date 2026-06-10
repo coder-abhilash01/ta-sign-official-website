@@ -4,7 +4,7 @@ import FounderDetail from './FounderDetail'
 
 const AboutUs = () => {
   const {pathname} = useLocation()
-  console.log(pathname)
+
   return (
     <>
  

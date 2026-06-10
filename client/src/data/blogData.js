@@ -42,6 +42,84 @@ Businesses participating in tenders should obtain a valid Class 3 DSC with USB T
 `,
     },
 
+
+  {
+    id: 7,
+    slug: "digital-signature-certificate-in-kanpur",
+    title: "Digital Signature Certificate (DSC) in Kanpur",
+    category: "DSC",
+    date: "10 June 2026",
+    readTime: "6 min read",
+    image: "/blogs/dsc-kanpur.png",
+
+    excerpt:
+        "Looking for a Digital Signature Certificate (DSC) in Kanpur? Learn about Class 3 DSC, its uses, benefits and who needs it.",
+
+    content: `
+Digital Signature Certificates (DSC) have become essential for businesses, professionals and individuals who need to complete secure online transactions and government compliance procedures.
+
+If you are looking for a Digital Signature Certificate in Kanpur, we help you get your DSC quickly with complete support — from application to installation.
+
+What is a Digital Signature Certificate?
+
+A Digital Signature Certificate is an electronic signature issued by a licensed Certifying Authority. It verifies the identity of the signer and ensures the authenticity of digitally signed documents.
+
+Who Needs a DSC in Kanpur?
+
+In Kanpur, a DSC is commonly required by:
+
+• Business Owners
+• Company Directors
+• Chartered Accountants
+• Advocates
+• GST Practitioners
+• Government Contractors
+• GeM Sellers
+• Tender Participants
+
+Common Uses of DSC
+
+• Government Tender Participation
+• GeM Portal Registration
+• MCA Filing
+• GST Compliance
+• Income Tax Filing
+• DGFT Applications
+• E-Procurement Portals
+
+Benefits of Digital Signature Certificate
+
+✓ Secure Online Transactions
+✓ Legally Valid Electronic Signatures
+✓ Faster Documentation Process
+✓ Reduced Paperwork
+✓ Better Data Security
+
+Class 3 DSC in Kanpur
+
+Class 3 DSC is widely used for eTendering, GeM registration, MCA filings and other government portals. In Kanpur, we provide Class 3 DSC with quick processing and support for USB token setup.
+
+How to Apply for DSC?
+
+1. Submit Required Documents
+2. Complete Verification Process
+3. Make Payment
+4. Certificate Issuance
+5. Install DSC in USB Token
+
+Why Choose Our DSC Services in Kanpur?
+
+• Quick Processing
+• Affordable Pricing
+• Support for Installation
+• Assistance for Tender & GeM Use
+
+Conclusion
+
+Whether you are a business owner, professional or contractor in Kanpur, a Digital Signature Certificate is essential for secure digital transactions. With the right guidance, the process becomes simple and hassle-free.
+`,
+},
+
     {
         id: 2,
         slug: "how-to-apply-class-3-dsc-online",
@@ -194,6 +272,135 @@ Common Issues:
 • Browser Compatibility Issues
 `,
     },
+
+    {
+id: 8,
+slug: "trademark-registration-in-kanpur",
+title: "Trademark Registration in Kanpur",
+category: "Trademark",
+date: "12 June 2026",
+readTime: "7 min read",
+image: "/blogs/trademark-kanpur.png",
+
+
+excerpt:
+    "Looking for trademark registration in Kanpur? Learn the process, benefits and how to protect your brand legally.",
+
+content: `
+
+
+Trademark registration is important for protecting your brand name, logo and business identity in a competitive market.
+
+If you are planning to register a trademark in Kanpur, we help you complete the process smoothly with proper guidance at every step.
+
+What is a Trademark?
+
+A trademark is a unique identity of your business such as a name, logo, symbol or tagline that distinguishes your brand from others.
+
+Who Should Register a Trademark in Kanpur?
+
+In Kanpur, trademark registration is useful for:
+
+• Startups
+• Business Owners
+• E-commerce Sellers
+• Manufacturers
+• Service Providers
+• Entrepreneurs
+
+Benefits of Trademark Registration
+
+✓ Legal Protection for Brand
+✓ Exclusive Ownership Rights
+✓ Builds Customer Trust
+✓ Helps in Brand Recognition
+✓ Valuable Business Asset
+
+Trademark Registration Process
+
+1. Trademark Search
+2. Application Filing
+3. Examination by Authority
+4. Publication in Journal
+5. Registration Certificate
+
+Why Choose Our Trademark Services in Kanpur?
+
+• Quick Application Filing
+• Expert Guidance
+• Affordable Pricing
+• End-to-End Support
+
+Conclusion
+
+If you want to protect your brand in Kanpur, trademark registration is a smart and essential step. With the right support, the process becomes simple and hassle-free.
+`,
+},
+
+{
+id: 9,
+slug: "iso-certification-in-kanpur",
+title: "ISO Certification in Kanpur",
+category: "ISO",
+date: "14 June 2026",
+readTime: "8 min read",
+image: "/blogs/iso-kanpur.png",
+
+
+excerpt:
+    "Get ISO certification in Kanpur with complete guidance. Learn benefits, process and why it matters for your business.",
+
+content: `
+
+
+ISO certification helps businesses improve quality, build trust and meet international standards.
+
+If you are looking for ISO certification in Kanpur, we provide complete assistance from documentation to final certification.
+
+What is ISO Certification?
+
+ISO certification is an internationally recognized standard that ensures your business follows proper quality management systems.
+
+Who Needs ISO Certification in Kanpur?
+
+In Kanpur, ISO certification is beneficial for:
+
+• Manufacturers
+• Service Providers
+• Startups
+• Small & Medium Businesses
+• Exporters
+• Contractors
+
+Benefits of ISO Certification
+
+✓ Improved Business Credibility
+✓ Better Process Management
+✓ Increased Customer Trust
+✓ International Recognition
+✓ Business Growth Opportunities
+
+ISO Certification Process
+
+1. Gap Analysis
+2. Documentation Preparation
+3. Implementation
+4. Audit
+5. Certification
+
+Why Choose Our ISO Services in Kanpur?
+
+• Complete Documentation Support
+• Expert Consultation
+• Fast Processing
+• Affordable Pricing
+
+Conclusion
+
+ISO certification is a valuable step for businesses in Kanpur looking to grow and build trust. With proper guidance, the certification process becomes smooth and efficient.
+`,
+}
+
 ];
 
 export const popularSearches = [

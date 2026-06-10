@@ -1,56 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
-    <loc>https://www.tasign.in/</loc>
-  </url>
+  <!-- MAIN PAGES -->
+  <url><loc>https://www.tasign.in/</loc></url>
+  <url><loc>https://www.tasign.in/home</loc></url>
+  <url><loc>https://www.tasign.in/digital-signature-certificate</loc></url>
+  <url><loc>https://www.tasign.in/dsc-utilities</loc></url>
+  <url><loc>https://www.tasign.in/authorization-letters</loc></url>
+  <url><loc>https://www.tasign.in/iso-certification</loc></url>
+  <url><loc>https://www.tasign.in/trademark-registration</loc></url>
+  <url><loc>https://www.tasign.in/services</loc></url>
+  <url><loc>https://www.tasign.in/buy-token</loc></url>
+  <url><loc>https://www.tasign.in/blog</loc></url>
+  <url><loc>https://www.tasign.in/about</loc></url>
+  <url><loc>https://www.tasign.in/contact</loc></url>
+  <url><loc>https://www.tasign.in/website-development</loc></url>
 
-  <url>
-    <loc>https://www.tasign.in/home</loc>
-  </url>
 
-  <url>
-    <loc>https://www.tasign.in/digital-signature-certificate</loc>
-  </url>
+  <url><loc>https://www.tasign.in/blog/role-of-dsc-in-government-tenders</loc></url>
+  <url><loc>https://www.tasign.in/blog/how-to-apply-class-3-dsc-online</loc></url>
+  <url><loc>https://www.tasign.in/blog/dsc-for-gem-portal</loc></url>
 
-  <url>
-    <loc>https://www.tasign.in/dsc-utilities</loc>
-  </url>
 
-  <url>
-    <loc>https://www.tasign.in/authorization-letters</loc>
-  </url>
-
-  <url>
-    <loc>https://www.tasign.in/iso-certification</loc>
-  </url>
-
-  <url>
-    <loc>https://www.tasign.in/trademark-registration</loc>
-  </url>
-
-  <url>
-    <loc>https://www.tasign.in/services</loc>
-  </url>
-
-  <url>
-    <loc>https://www.tasign.in/buy-token</loc>
-  </url>
-
-  <url>
-    <loc>https://www.tasign.in/blog</loc>
-  </url>
-
-  <url>
-    <loc>https://www.tasign.in/about</loc>
-  </url>
-
-  <url>
-    <loc>https://www.tasign.in/contact</loc>
-  </url>
-
-  <url>
-    <loc>https://www.tasign.in/website-development</loc>
-  </url>
+  <url><loc>https://www.tasign.in/blog/digital-signature-certificate-in-kanpur</loc></url>
+  <url><loc>https://www.tasign.in/blog/trademark-registration-in-kanpur</loc></url>
+  <url><loc>https://www.tasign.in/blog/iso-certification-in-kanpur</loc></url>
 
 </urlset>

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
-const mailjs = new Mailjs();
 
 const TempMailPage = () => {
   const [email, setEmail] = useState("");
