@@ -59,7 +59,7 @@ const BlogDetails = () => {
 
   const blog = blogs.find((item) => item.slug === slug);
 
-  console.log("Rendered:", blog.title, blog.excerpt);
+ 
 
   if (!blog) {
     return (
