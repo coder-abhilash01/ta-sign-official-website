@@ -3,13 +3,13 @@ import React from 'react'
 
 const TeamSupportSection = ({heading,subHeading,supportMessage}) => {
   return (
-     <section className="pb-24 mt-10">
-        <div className="max-w-7xl mx-auto px-6">
+     <section className="pb-24 mt-10 ">
+        <div className="max-w-7xl mx-auto ">
           <div
             className="rounded-[32px]
             bg-[#0f172a]
             border border-white/10
-            px-10 py-14 lg:px-16"
+           px-6  md:px-10 py-14 lg:px-16"
           >
             <div
               className="flex flex-col lg:flex-row

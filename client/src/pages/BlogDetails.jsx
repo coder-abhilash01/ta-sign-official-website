@@ -3,6 +3,7 @@ import { blogs } from "../data/blogData";
 import { ArrowLeft } from "lucide-react";
 import TeamSupportSection from "@/components/TeamSupportSection";
 import { Helmet } from "react-helmet-async";
+import AnnouncementStrip from "@/components/AnnouncementStrip";
 
 
 
@@ -93,6 +94,9 @@ const BlogDetails = () => {
   <meta
     name="description"  content={blog.excerpt }
    key="description" /></Helmet>
+
+<AnnouncementStrip/>
+
       <section className="bg-[#f8fafc]">
 
       {/* HERO */}
@@ -127,6 +131,8 @@ const BlogDetails = () => {
             Published on {blog.date}
           </p>
 
+
+
           {/* Image */}
           <div className="mt-12 relative rounded-3xl overflow-hidden">
             <img
@@ -143,7 +149,7 @@ const BlogDetails = () => {
 
       {/* ARTICLE */}
       <section className="py-10 ">
-        <div className="max-w-7xl mx-auto px-6 ">
+        <div className=" md:max-w-7xl mx-auto px-6 ">
 
           <div className="bg-white shadow-lg  border border-neutral-200 rounded-3xl p-8 md:p-12 ">
            <div className="space-y-2">
@@ -152,11 +158,7 @@ const BlogDetails = () => {
           </div>
 
           {/* CTA */}
-
-
-
-           <TeamSupportSection
-     heading = " Need Help With DSC, Trademark or ISO?"
+           <TeamSupportSection heading = " Need Help With DSC, Trademark or ISO?"
      
      supportMessage= " Get professional assistance for Class 3 DSC, Trademark Registration, ISO Certification and Government Tender Services." />
 
