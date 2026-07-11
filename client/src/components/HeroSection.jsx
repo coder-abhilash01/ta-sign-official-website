@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const HeroSection = () => {
   const navigate = useNavigate();
   return (
-    <section className=" w-full sm:h-[80vh] flex bg-linear-to-br from-[#f8fafc] via-[#ffffff] to-[#eef2ff] bg-[url('/hero-section-imgs/Team_meeting_hero_img.jpeg')] bg-cover
+    <section className=" w-full  flex bg-linear-to-br from-[#f8fafc] via-[#ffffff] to-[#eef2ff] bg-[url('/hero-section-imgs/Team_meeting_hero_img.jpeg')] bg-cover
        bg-center relative overflow-hidden  font-[Montserrat]">
 
     
