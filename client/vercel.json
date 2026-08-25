@@ -1,7 +1,7 @@
 {
   "rewrites": [
     {
-      "source": "/mail-api/:path*",
+      "source": "/api-mail/:path*",
       "destination": "https://api.mail.tm/:path*"
     },
     {
