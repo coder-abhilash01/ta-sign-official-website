@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
-const mailjs = new Mailjs();
+const mailjs = new Mailjs({baseUrl: "/mail-api"});
 
 const TempMailPage = () => {
   const [email, setEmail] = useState("");
@@ -19,18 +19,28 @@ const TempMailPage = () => {
 
       const account =
         await mailjs.createOneAccount(true);
+        console.log("account", account);
 
       if (
         !account?.status ||
         !account?.data?.username
       ) {
+
+         console.log(
+          "Failed to generate email",
+          account
+        );
         toast.error(
           account?.message ||
             "Failed to generate email"
         );
+        console.log(
+          "Failed to generate email",
+          account
+        );
         return;
       }
-
+console.log("account", account);
       setEmail(account.data.username);
       setToken(mailjs.token);
 
@@ -52,7 +62,7 @@ const TempMailPage = () => {
         "Temporary email generated successfully"
       );
     } catch (error) {
-      console.error(error);
+      console.error("err" , error);
 
       const message =
         error?.message || "";
