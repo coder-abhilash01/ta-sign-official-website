@@ -9,6 +9,7 @@ import Carousel from "@/components/Carousel";
 import FrequentlyAskedQues from "@/components/FrequentlyAskedQues";
 import QuickAccessTools from "@/components/QuickAccessTools";
 import ContactSection from "@/components/ContactSection";
+import GoogleReviews from "@/components/GoogleReviews";
 
 const Home = () => {
   return (
@@ -36,6 +37,7 @@ const Home = () => {
         <Carousel />
 
         <FrequentlyAskedQues />
+        <GoogleReviews/>
 
         <ContactSection />
 

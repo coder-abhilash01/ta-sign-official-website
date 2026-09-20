@@ -26,7 +26,7 @@ const ServiceCard = ({
       <div className="text-sm font-semibold text-blue-600 mb-2 price ">
         {price}
       </div>
-<img src="/partner-logos/isoLogo.png" className=" aspect-4/3 w-25 object-cover"/>
+<img src="/partner-logos/isoLogo.png" alt="ISO Logo" className=" aspect-4/3 w-25 object-cover"/>
       {/* Title */}
       <h3 className="text-xl font-semibold mb-4 text-center text-black">
         {title}

@@ -1,11 +1,31 @@
+import API from "@/../api/axios";
 import { ArrowRight, MoveRight } from 'lucide-react'
+import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
   const navigate = useNavigate();
+  const [heroImg, setHeroImg] = useState("");
+
+  useEffect(() => {
+    const fetchHeroImg = async () => {
+      try {
+        const response = await API.get("/api/public/hero");
+    
+        setHeroImg(response.data.data.image.url);
+      } catch (error) {
+        console.error("Error fetching hero image:", error);
+      }
+    };
+
+    fetchHeroImg();
+  }, []);
   return (
-    <section className=" w-full  flex bg-linear-to-br from-[#f8fafc] via-[#ffffff] to-[#eef2ff] bg-[url('/hero-section-imgs/Team_meeting_hero_img.jpeg')] bg-cover
-       bg-center relative overflow-hidden  font-[Montserrat]">
+    <section className=" w-full  flex bg-linear-to-br from-[#f8fafc] via-[#ffffff] to-[#eef2ff] bg-cover
+       bg-center relative overflow-hidden  font-[Montserrat]"
+        style={{
+    backgroundImage: `url(${heroImg})`,
+  }}>
 
     
       <div className="absolute z-1 inset-0  bg-black/60 backdrop-blur-[1px]" />

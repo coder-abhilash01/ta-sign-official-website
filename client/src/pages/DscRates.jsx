@@ -26,6 +26,7 @@ const DscRates = () => {
         <div className="relative w-full lg:h-[42vh] mb-16">
           <img
             src="/hero-section-imgs/dsc-img.png"
+            alt="DSC Hero"
             className="w-full h-full object-cover"
           />
           <div className="w-full h-full absolute top-0 left-0 bg-black/20" />

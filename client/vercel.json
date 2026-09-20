@@ -1,10 +1,6 @@
 {
   "rewrites": [
     {
-      "source": "/api-mail/:path*",
-      "destination": "https://api.mail.tm/:path*"
-    },
-    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

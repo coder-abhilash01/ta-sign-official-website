@@ -25,7 +25,7 @@ const WhattsappFloatIcon = () => {
         className="fixed right-4 bottom-6 z-50 flex flex-col items-center gap-1"
       >
         <div className="relative">
-          <img src="/whatsapp-logo.png" className="w-14 sm:w-16" />
+          <img src="/whatsapp-logo.png" alt="WhatsApp Logo" className="w-14 sm:w-16" />
 
           <span className=" absolute -top-[2px] -right-[2px] w-4 h-4 bg-red-500
       text-white text-[10px] rounded-full flex items-center justify-center

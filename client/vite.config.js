@@ -7,15 +7,6 @@ import path from "path";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  server: {
-    proxy: {
-      '/api-mail': {
-        target: 'https://api.mail.tm',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api-mail/, ''),
-      },
-    },
-  },
   
   resolve: {
     alias: {

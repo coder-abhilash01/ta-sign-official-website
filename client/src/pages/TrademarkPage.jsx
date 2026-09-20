@@ -54,14 +54,14 @@ const TrademarkPage = () => {
                 {/* LEFT */}
 
                 <div className="z-10">
-                  <h2
+                  <h1
                     className="uppercase
               text-white mb-4 mt-8 text-2xl md:text-6xl
                 leading-tight tracking-tight
                 font-semibold"
                   >
                     Trademark Registration
-                  </h2>
+                  </h1>
 
 
 
@@ -102,13 +102,13 @@ const TrademarkPage = () => {
                 {/* RIGHT */}
                 <div className="h-full  flex items-end md:justify-end z-10">
                   <div className="flex flex-col gap-10 ">
-                    <h1
+                    <h2
                       className="mt-8 text-lg md:text-xl
                 leading-tight tracking-wide
                 font-normal text-white/40 uppercase mr-15 font-[Philosopher]"
                     >
                       Protect Your Brand <br /> Before  Someone Else Claims It
-                    </h1> <p className="text-white/60 flex gap-5"><span className="border-r pr-5  border-white/30"> ™ REGISTER</span>  <span className="border-r pr-5 border-white/30">™ PROTECT </span> <span>™ GROW</span></p>
+                    </h2> <p className="text-white/60 flex gap-5"><span className="border-r pr-5  border-white/30"> ™ REGISTER</span>  <span className="border-r pr-5 border-white/30">™ PROTECT </span> <span>™ GROW</span></p>
                   </div> </div>
 
               </div>

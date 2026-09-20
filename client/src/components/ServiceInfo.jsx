@@ -39,9 +39,9 @@ const ServiceInfo = () => {
           <span className=' text-xs font-bold text-black group-hover:text-white z-10'>0{i + 1}</span>
       
           <div className='w-full md:w-1/3 z-10 pointer-events-none'>
-            <h1 className="text-2xl font-semibold tracking-tight text-neutral-900 group-hover:text-white transition-colors duration-300">
+            <h2 className="text-2xl font-semibold tracking-tight text-neutral-900 group-hover:text-white transition-colors duration-300">
               {info.title}
-            </h1>
+            </h2>
           </div>
 
           <div className='w-full md:w-1/2 z-10 pointer-events-none'>

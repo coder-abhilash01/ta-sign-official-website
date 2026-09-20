@@ -28,8 +28,7 @@ const resources = [
 const Footer = () => {
   return (
     <footer
-      className="max-w-[1600px] mx-auto
-        sm:rounded-[32px]
+      className="max-w-full 
         overflow-hidden
         bg-gradient-to-br from-[#1f2d49] to-[#111827]
         text-white border border-white/10"

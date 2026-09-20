@@ -15,9 +15,9 @@ const ContactSection = () => {
     Contact Us
   </p>
 
-  <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-black leading-tight">
+  <h2 className="text-4xl md:text-6xl font-semibold tracking-tight text-black leading-tight">
     Expert Assistance For DSC, Trademark & Compliance Services
-  </h1>
+  </h2>
 
   <p className="text-gray-600 text-lg leading-8 mt-8 max-w-xl">
     Whether you need a Digital Signature Certificate, Trademark Registration,

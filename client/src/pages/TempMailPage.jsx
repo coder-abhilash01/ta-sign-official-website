@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
+import axios from "axios";
+
+// Node.js Backend Proxy URL (Local & Production ready)
+const MAIL_BASE = "http://localhost:5000/api/mail";
 
 const TempMailPage = () => {
   const [email, setEmail] = useState("");
@@ -9,75 +13,99 @@ const TempMailPage = () => {
   const [selectedId, setSelectedId] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // 1. Generate Email & Token (via Vite Proxy /api-mail)
+  // Rate limit timer
+  const [rateLimited, setRateLimited] = useState(false);
+  const [remainingTime, setRemainingTime] = useState(0);
+
   const createMail = async () => {
-    if (loading) return;
+    if (loading || rateLimited) return;
 
     try {
       setLoading(true);
 
-      // Available domain fetch karein
-      const domainRes = await fetch("/api-mail/domains");
-      const domainData = await domainRes.json();
-      const domain = domainData["hydra:member"]?.[0]?.domain;
+      const domainRes = await axios.get(`${MAIL_BASE}/domains`);
+      const domain = domainRes.data?.["hydra:member"]?.[0]?.domain;
 
       if (!domain) {
-        toast.error("No domain available from Mail.tm");
+        toast.error("Mail service domain unavailable");
         return;
       }
 
-      // Random user details generate karein
       const randomStr = Math.random().toString(36).substring(2, 10);
       const address = `user_${randomStr}@${domain}`;
       const password = "Pass123!_user";
 
-      // Mail.tm account create karein
-      const createRes = await fetch("/api-mail/accounts", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ address, password }),
+      await axios.post(`${MAIL_BASE}/accounts`, {
+        address,
+        password,
       });
 
-      if (!createRes.ok) {
-        const errData = await createRes.json();
-        toast.error(errData.message || "Failed to create account");
-        return;
-      }
-
-      // Auth bearer token fetch karein
-      const tokenRes = await fetch("/api-mail/token", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ address, password }),
+      const tokenRes = await axios.post(`${MAIL_BASE}/token`, {
+        address,
+        password,
       });
 
-      const tokenData = await tokenRes.json();
+      const userToken = tokenRes.data?.token;
 
-      if (!tokenData.token) {
-        toast.error("Failed to get auth token");
+      if (!userToken) {
+        toast.error("Authentication failed");
         return;
       }
 
       setEmail(address);
-      setToken(tokenData.token);
+      setToken(userToken);
 
       localStorage.setItem("tempMail", address);
-      localStorage.setItem("tempMailToken", tokenData.token);
+      localStorage.setItem("tempMailToken", userToken);
 
       setMessages([]);
       setSelectedMessage(null);
       setSelectedId(null);
 
-      toast.success("Temporary email generated successfully");
+      toast.success("Temporary email generated");
     } catch (error) {
       console.error("Create email error:", error);
-      toast.error("Failed to generate email");
+
+      // Rate limit reached
+      if (error.response?.status === 429) {
+        setRateLimited(true);
+        setRemainingTime(5 * 60);
+
+        toast.error(
+          error.response?.data?.message ||
+            "Too many requests. Please try again after 5 minutes."
+        );
+
+        return;
+      }
+
+      toast.error(
+        error.response?.data?.message || "Failed to generate email"
+      );
     } finally {
       setLoading(false);
     }
   };
 
-  // 2. Copy Email
+  // Rate limit countdown
+  useEffect(() => {
+    if (!rateLimited || remainingTime <= 0) return;
+
+    const timer = setInterval(() => {
+      setRemainingTime((prev) => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          setRateLimited(false);
+          return 0;
+        }
+
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [rateLimited, remainingTime]);
+
   const copyMail = async () => {
     if (!email) {
       toast.error("Generate an email first");
@@ -92,53 +120,37 @@ const TempMailPage = () => {
     }
   };
 
-  // 3. Fetch Inbox Messages
   const getMessages = async () => {
     const activeToken = token || localStorage.getItem("tempMailToken");
-
     if (!activeToken) return;
 
     try {
-      const res = await fetch("/api-mail/messages", {
-        headers: {
-          Authorization: `Bearer ${activeToken}`,
-        },
+      const res = await axios.get(`${MAIL_BASE}/messages`, {
+        headers: { Authorization: `Bearer ${activeToken}` },
       });
 
-      const data = await res.json();
-
-      if (!res.ok) {
-        toast.error(data.error || "Failed to fetch inbox");
-        return;
-      }
-
-      setMessages(Array.isArray(data["hydra:member"]) ? data["hydra:member"] : []);
+      const memberList = res.data?.["hydra:member"];
+      setMessages(Array.isArray(memberList) ? memberList : []);
     } catch (error) {
       console.error("Get messages error:", error);
     }
   };
 
-  // 4. Read Single Message Details
   const getMessage = async (id) => {
     const activeToken = token || localStorage.getItem("tempMailToken");
-
     if (!activeToken || !id) return;
 
     try {
-      const res = await fetch(`/api-mail/messages/${id}`, {
-        headers: {
-          Authorization: `Bearer ${activeToken}`,
-        },
+      const res = await axios.get(`${MAIL_BASE}/messages/${id}`, {
+        headers: { Authorization: `Bearer ${activeToken}` },
       });
 
-      const data = await res.json();
-
-      if (!res.ok) {
-        toast.error(data.error || "Unable to load email");
+      if (!res.data) {
+        toast.error("Unable to load email");
         return;
       }
 
-      setSelectedMessage(data);
+      setSelectedMessage(res.data);
       setSelectedId(id);
     } catch (error) {
       console.error("Get single message error:", error);
@@ -146,7 +158,6 @@ const TempMailPage = () => {
     }
   };
 
-  // Load Saved Email or Auto-Create on First Visit
   useEffect(() => {
     const savedMail = localStorage.getItem("tempMail");
     const savedToken = localStorage.getItem("tempMailToken");
@@ -160,7 +171,6 @@ const TempMailPage = () => {
     }
   }, []);
 
-  // Poll Inbox Every 10 Seconds
   useEffect(() => {
     if (!token) return;
 
@@ -174,17 +184,16 @@ const TempMailPage = () => {
   return (
     <section className="min-h-screen bg-[#accdf6] py-16">
       <div className="max-w-5xl mx-auto px-6">
-        {/* HEADER */}
         <div className="mb-10">
           <h1 className="text-5xl font-semibold tracking-tight">
             Temporary Mail
           </h1>
+
           <p className="mt-3 text-neutral-600">
             Generate disposable email addresses instantly.
           </p>
         </div>
 
-        {/* CONTROLS */}
         <div className="bg-white border rounded-2xl p-5 flex flex-wrap gap-3">
           <input
             value={email}
@@ -195,10 +204,18 @@ const TempMailPage = () => {
 
           <button
             onClick={createMail}
-            disabled={loading}
+            disabled={loading || rateLimited}
             className="px-5 h-12 rounded-xl bg-blue-600 text-white shadow-md cursor-pointer hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {loading ? "Generating..." : "Generate"}
+            {rateLimited
+              ? `Try again in ${Math.floor(remainingTime / 60)
+                  .toString()
+                  .padStart(2, "0")}:${(remainingTime % 60)
+                  .toString()
+                  .padStart(2, "0")}`
+              : loading
+              ? "Generating..."
+              : "Generate"}
           </button>
 
           <button
@@ -216,9 +233,23 @@ const TempMailPage = () => {
           </button>
         </div>
 
-        {/* CONTENT GRID */}
+        {rateLimited && (
+          <div className="mt-4 text-sm text-red-600">
+            Too many requests. Please wait{" "}
+            <span className="font-semibold">
+              {Math.floor(remainingTime / 60)
+                .toString()
+                .padStart(2, "0")}
+              :
+              {(remainingTime % 60)
+                .toString()
+                .padStart(2, "0")}
+            </span>{" "}
+            before generating another email.
+          </div>
+        )}
+
         <div className="grid lg:grid-cols-[380px_1fr] gap-6 mt-8">
-          {/* INBOX */}
           <div className="bg-white border rounded-2xl p-5">
             <h2 className="font-semibold text-xl mb-5">
               Inbox ({messages.length})
@@ -251,7 +282,6 @@ const TempMailPage = () => {
             </div>
           </div>
 
-          {/* MESSAGE VIEWER */}
           <div className="bg-white border rounded-2xl p-6 min-h-[600px]">
             {!selectedMessage ? (
               <div className="h-full flex items-center justify-center">
@@ -259,6 +289,7 @@ const TempMailPage = () => {
                   <h3 className="text-xl font-semibold">
                     No Email Selected
                   </h3>
+
                   <p className="text-neutral-500 mt-2">
                     Select an email from the inbox to view it.
                   </p>
@@ -275,6 +306,7 @@ const TempMailPage = () => {
                     <p>
                       From: {selectedMessage.from?.address || "Unknown"}
                     </p>
+
                     <p>
                       Received:{" "}
                       {new Date(
