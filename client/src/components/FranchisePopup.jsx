@@ -144,7 +144,7 @@ const FranchisePopup = () => {
 
       {open && (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/40 backdrop-blur-md p-4 font-[Montserrat]">
-          <div className="relative w-full max-w-[500px] overflow-hidden rounded-sm bg-white shadow-[0_30px_80px_rgba(0,0,0,0.18)] animate-in fade-in zoom-in-95 duration-300">
+          <div className={`relative w-full ${isPartner? "max-w-[500px]" : "max-w-[400px] max-w-[80vh]"} overflow-hidden rounded-sm bg-white shadow-[0_30px_80px_rgba(0,0,0,0.18)] animate-in fade-in zoom-in-95 duration-300`}>
 
             {/* CLOSE BUTTON */}
             <button
@@ -252,12 +252,11 @@ const FranchisePopup = () => {
             )}
 
             {isOffer && popupData.offerImage?.url && (
-              <div className="relative">
+              <div className="relative w-full">
 
                 <img
                   src={popupData.offerImage.url}
                   alt="TA Sign Offer"
-                  className="w-full h-auto object-cover"
                 />
 
               </div>

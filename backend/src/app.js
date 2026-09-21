@@ -14,7 +14,7 @@ const utilityRoutes = require("./routes/public/utilityRoutes");
 const app = express();
 
 app.use(cors({ origin: ["http://localhost:5173","http://localhost:5174",  "https://tasign.in",
-      "https://www.tasign.in",],
+      "https://www.tasign.in","https://ta-sign.vercel.app/"],
   credentials: true
  }));
 app.use(express.json());
