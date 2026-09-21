@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import axios from "axios";
 
-// Node.js Backend Proxy URL (Local & Production ready)
-const MAIL_BASE = "http://localhost:5000/api/mail";
+const MAIL_BASE = `${import.meta.env.VITE_BACKEND_URL}/api/mail`;
 
 const TempMailPage = () => {
   const [email, setEmail] = useState("");

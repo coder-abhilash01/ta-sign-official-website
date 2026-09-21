@@ -13,7 +13,8 @@ const popupRoutes = require("./routes/public/popupRoutes")
 const utilityRoutes = require("./routes/public/utilityRoutes");
 const app = express();
 
-app.use(cors({ origin: ["http://localhost:5173","http://localhost:5174"],
+app.use(cors({ origin: ["http://localhost:5173","http://localhost:5174",  "https://tasign.in",
+      "https://www.tasign.in",],
   credentials: true
  }));
 app.use(express.json());
