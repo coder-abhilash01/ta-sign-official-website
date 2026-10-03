@@ -27,7 +27,7 @@ const proxyMailRequest = async (req, res) => {
   } catch (error) {
     const status = error.response?.status || 500;
     const data = error.response?.data || {
-      error: "Proxy Request Failed",
+      error: "Temp mail service is temporarily rate limited",
       message: error.message,
     };
     return res.status(status).json(data);

@@ -152,6 +152,7 @@ const Footer = () => {
       </div>
 
       {/* BOTTOM BAR */}
+            {/* BOTTOM BAR */}
       <div className="border-t border-white/10 bg-black/10">
         <div
           className="max-w-7xl mx-auto
@@ -164,8 +165,18 @@ const Footer = () => {
             Copyright © 2026 TA SIGN. All rights reserved.
           </p>
 
-        
-          <SocialLinks />
+          <div className="flex flex-col-reverse md:flex-row flex-1 justify-around items-center gap-5 ">
+            <a
+              href="https://abhilashwebstudio.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-neutral-500 hover:text-white transition"
+            >
+              Website by Abhilash Web Studio
+            </a>
+
+            <SocialLinks />
+          </div>
         </div>
       </div>
     </footer>

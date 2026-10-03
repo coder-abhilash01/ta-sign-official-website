@@ -8,7 +8,7 @@ const { tempMailLimiter } = require("../middlewares/rateLimiters");
 
 
 // Create temporary account
-router.post("/accounts", tempMailLimiter, (req, res) => {
+router.post("/accounts", (req, res) => {
     req.params.splat = "accounts";
     mailController(req, res);
 });

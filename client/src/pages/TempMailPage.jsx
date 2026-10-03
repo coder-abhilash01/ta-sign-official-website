@@ -175,7 +175,7 @@ const TempMailPage = () => {
 
     const interval = setInterval(() => {
       getMessages();
-    }, 10000);
+    }, 20000);
 
     return () => clearInterval(interval);
   }, [token]);
